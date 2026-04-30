@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Gestor de Tareas Pro</h1>
+            <p>Organiza tu trabajo de forma eficiente</p>
+        </div>
+
+        <div class="cards-container">
+            <!-- PANEL DE USUARIOS -->
+            <div class="card">
+                <h2>👥 Usuarios</h2>
+                
+                <div class="form-group">
+                    <label for="userName">Nuevo Usuario</label>
+                    <input type="text" id="userName" placeholder="Ingresa el nombre del usuario">
+                </div>
+                
+                <button class="btn-primary" onclick="crearUsuario()">➕ Crear Usuario</button>
+                
+                <div style="margin-top: 20px;">
+                    <h3 style="color: #667eea; font-size: 1.1em; margin-bottom: 15px;">
+                        Lista de Usuarios <span class="counter" id="userCounter">0</span>
+                    </h3>
+                    <ul id="listaUsuarios">
+                        <li class="empty-message">No hay usuarios registrados</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PANEL DE TAREAS -->
+            <div class="card">
+                <h2>✅ Tareas</h2>
+                
+                <div class="search-box">
+                    <label for="buscarTarea">🔍 Buscar Tarea</label>
+                    <input type="text" id="buscarTarea" placeholder="Filtrar por ID o nombre..." onkeyup="filtrarTareas()">
+                </div>
+
+                <hr>
+                
+                <div class="form-group">
+                    <label for="taskTitle">Nueva Tarea</label>
+                    <input type="text" id="taskTitle" placeholder="Descripción de la tarea">
+                </div>
+                
+                <div class="form-group">
+                    <label for="userId">Asignar a Usuario</label>
+                    <select id="userId">
+                        <option value="">-- Selecciona un usuario --</option>
+                    </select>
+                </div>
+                
+                <button class="btn-primary" onclick="crearTarea()">➕ Asignar Tarea</button>
+                
+                <div style="margin-top: 20px;">
+                    <h3 style="color: #667eea; font-size: 1.1em; margin-bottom: 15px;">
+                        Lista de Tareas <span class="counter" id="taskCounter">0</span>
+                    </h3>
+                    <ul id="listaTareas">
+                        <li class="empty-message">No hay tareas registradas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
